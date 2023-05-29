@@ -41,7 +41,7 @@ resource "aws_security_group" "example_sg1" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["172.65.24.14/16"]
+    cidr_blocks = ["172.65.0.0/16"]
   }
 }
 
