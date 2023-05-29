@@ -13,12 +13,15 @@ provider "aws" {
 resource "aws_instance" "example5" {
   ami           = "ami-016eb5d644c333ccb"
   instance_type = "t2.micro"
+   tags = {
+    Name = "terraform"
+  }
 }
 resource "aws_instance" "example6" {
   ami           = "ami-016eb5d644c333ccb"
   instance_type = "t2.micro"
   tags = {
-    Name = "HelloWorld"
+    Name = "terraform"
   }
 }
 
