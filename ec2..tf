@@ -24,4 +24,27 @@ resource "aws_instance" "example6" {
     Name = "terraform"
   }
 }
+resource "aws_instance" "example" {
+  ami           = "ami-016eb5d644c333ccb"
+  instance_type = "t2.micro"
+   tags = {
+    Name = "terraform"
+  }
+ vpc_security_group_ids = [aws_security_group.example_sg1.id]
+}
+
+resource "aws_security_group" "example_sg1" {
+  name        = "example-sg1"
+  description = "Example security group 1"
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+
+
 
